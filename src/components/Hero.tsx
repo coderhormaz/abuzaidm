@@ -7,16 +7,7 @@ export default function Hero() {
   return (
     <div className="hero-container">
       {/* Navigation */}
-      <nav className="navbar">
-        <div className="nav-links">
-          <a href="#home">HOME</a>
-          <a href="#about">ABOUT</a>
-          <a href="#experience">EXPERIENCE</a>
-          <a href="#project">PROJECT</a>
-          <a href="#certificate">CERTIFICATE</a>
-        </div>
-        <button className="connect-btn">LET'S CONNECT</button>
-      </nav>
+      
 
       {/* Hero Content */}
       <div className="hero-content">
@@ -101,6 +92,7 @@ export default function Hero() {
               status="Available"
               contactText="Contact"
               showUserInfo={true}
+              innerGradient="linear-gradient(135deg, #1a253f, #3f4c77)"
             />
           </div>
         </div>
