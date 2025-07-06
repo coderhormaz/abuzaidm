@@ -181,45 +181,7 @@
 }
 
 /* Circle Annotations */
-.circle-annotation {
-  position: absolute;
-}
 
-.circle-2 {
-  position: absolute;
-  top: 60%;
-  right: 10%;
-  transform: translateY(-50%);
-}
-
-.circle-outline {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  border: 3px solid #00ffff;
-  border-radius: 50%;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: pulse 2s infinite;
-}
-
-.circle-2 .circle-outline {
-  width: 420px;
-  height: 420px;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 20px rgba(0, 255, 255, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0, 255, 255, 0);
-  }
-}
 
 /* 3D Scene */
 .scene-container {

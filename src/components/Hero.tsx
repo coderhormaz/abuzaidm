@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import Scene3D from './Scene3D'
+import ProfileCard from './ProfileCard/ProfileCard'
 import './Hero.css'
 import StarBorder from './StarBorder/StarBorder'
 import { TextAnimate } from './magicui/text-animate'
@@ -92,12 +92,16 @@ export default function Hero() {
         </div>
 
         <div className="hero-right">
-          {/* Circle 2 - 3D Model */}
-          <div className="circle-annotation circle-2">
-            <div className="circle-outline"></div>
-            <div className="scene-container">
-              <Scene3D />
-            </div>
+          <div className="scene-container" style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <ProfileCard 
+              avatarUrl="/abuzaid.png" 
+              name="Abuzaid Inamdar"
+              title="Full Stack Developer"
+              handle="abuzaid"
+              status="Available"
+              contactText="Contact"
+              showUserInfo={true}
+            />
           </div>
         </div>
       </div>
