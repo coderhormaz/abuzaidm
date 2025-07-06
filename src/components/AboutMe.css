@@ -1,0 +1,68 @@
+.about-section {
+  padding: 6rem 3rem;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-header .text-animate {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #00ffff;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.about-left {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.wavy span {
+  display: inline-block;
+  /* any additional wavy effect can be added here */
+}
+
+.about-right {
+  flex: 1;
+  position: relative;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-large {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-small {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
