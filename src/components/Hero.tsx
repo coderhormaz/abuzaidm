@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import ProfileCard from './ProfileCard/ProfileCard'
 import './Hero.css'
@@ -10,14 +9,97 @@ export default function Hero() {
       {/* Navigation */}
       <nav className="navbar">
         <div className="nav-links">
-          <a href="#home" className="active">Home</a>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#project">Project</a>
-          <a href="#certificate">Certificate</a>
-          <a href="#contact">Contact</a>
+          <motion.a 
+            href="#home"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+          >
+            <TextAnimate
+              animation="fadeIn"
+              by="word"
+              delay={0.9}
+              duration={0.5}
+            >
+              HOME
+            </TextAnimate>
+          </motion.a>
+          <motion.a 
+            href="#about"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+          >
+            <TextAnimate
+              animation="fadeIn"
+              by="word"
+              delay={1.2}
+              duration={0.5}
+            >
+              ABOUT
+            </TextAnimate>
+          </motion.a>
+          <motion.a 
+            href="#experience"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.5 }}
+          >
+            <TextAnimate
+              animation="fadeIn"
+              by="word"
+              delay={1.5}
+              duration={0.5}
+            >
+              EXPERIENCE
+            </TextAnimate>
+          </motion.a>
+          <motion.a 
+            href="#project"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.8 }}
+          >
+            <TextAnimate
+              animation="fadeIn"
+              by="word"
+              delay={1.8}
+              duration={0.5}
+            >
+              PROJECT
+            </TextAnimate>
+          </motion.a>
+          <motion.a 
+            href="#certificate"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 2.1 }}
+          >
+            <TextAnimate
+              animation="fadeIn"
+              by="word"
+              delay={2.1}
+              duration={0.5}
+            >
+              CERTIFICATE
+            </TextAnimate>
+          </motion.a>
         </div>
-        <button className="connect-btn" onClick={() => window.open('/resume.pdf', '_blank')}>Get Resume</button>
+        <motion.button 
+          className="connect-btn"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 2.4 }}
+        >
+          <TextAnimate
+            animation="fadeIn"
+            by="character"
+            delay={2.4}
+            duration={0.8}
+          >
+            LET'S CONNECT
+          </TextAnimate>
+        </motion.button>
       </nav>
 
       {/* Hero Content */}
@@ -61,24 +143,9 @@ export default function Hero() {
             </TextAnimate>
             
             <div className="button-group">
-                <StarBorder as="button"
-                  className="cta-button resume-btn"
-                  color="cyan"
-                  speed="0s"
-                  style={{ border: '2px solid cyan' }}
-                >
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="cta-button resume-btn"
-                    
-                  >
-                    Explore my projects!
-                  </motion.button>
-                </StarBorder>
               <StarBorder as="button"
   className="custom-class"
-  color="magenta"
+  color="cyan"
   speed="5s"
 >
               <motion.button
@@ -87,6 +154,20 @@ export default function Hero() {
                 className="cta-button resume-btn"
               >
                 Download Resume
+              </motion.button>
+            </StarBorder>
+            <StarBorder as="button"
+  className="custom-class"
+  color="cyan"
+  speed="5s"
+>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="cta-button resume-btn"
+                style={{ marginLeft: '1.5rem' }}
+              >
+                Explore my project!
               </motion.button>
             </StarBorder>
             </div>

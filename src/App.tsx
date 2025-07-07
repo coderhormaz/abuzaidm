@@ -1,9 +1,10 @@
 import Hero from './components/Hero'
 import AboutMe from './components/AboutMe'
 import Footer from './components/footer';
-import SplashCursor from './components/SplashCursor/SplashCursor'
-
+import SplashCursor from './components/SplashCursor/SplashCursor';
 import './App.css'
+
+
 
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
       <SplashCursor />
       <Hero />
       <AboutMe />
+  
+
       <Footer />
     </>
   )
