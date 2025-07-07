@@ -1,3 +1,4 @@
+import React from 'react'
 import { motion } from 'framer-motion'
 import ProfileCard from './ProfileCard/ProfileCard'
 import './Hero.css'
@@ -7,7 +8,17 @@ export default function Hero() {
   return (
     <div className="hero-container">
       {/* Navigation */}
-      
+      <nav className="navbar">
+        <div className="nav-links">
+          <a href="#home" className="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#project">Project</a>
+          <a href="#certificate">Certificate</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button className="connect-btn" onClick={() => window.open('/resume.pdf', '_blank')}>Get Resume</button>
+      </nav>
 
       {/* Hero Content */}
       <div className="hero-content">
