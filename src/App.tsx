@@ -6,6 +6,7 @@ import './App.css'
 import DraggableCardDemo from './components/drag';
 import { TabsDemo } from './components/certificate';
 import AnimatedTestimonials from './components/review';
+import AnimatedTabs from './components/mcertificate';
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
         <h1>Certificate Showcase</h1>
       </div>
       <TabsDemo />
+      <AnimatedTabs />
       <div className="about-header">
         <h1>Testimonials</h1>
       </div>
