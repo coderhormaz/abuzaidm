@@ -143,33 +143,33 @@ export default function Hero() {
             </TextAnimate>
             
             <div className="button-group">
-              <StarBorder as="button"
-  className="custom-class"
-  color="cyan"
-  speed="5s"
->
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="cta-button resume-btn"
+              <StarBorder as="div"
+                className="custom-class"
+                color="cyan"
+                speed="5s"
               >
-                Download Resume
-              </motion.button>
-            </StarBorder>
-            <StarBorder as="button"
-  className="custom-class"
-  color="cyan"
-  speed="5s"
->
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="cta-button resume-btn"
-                style={{ marginLeft: '1.5rem' }}
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="cta-button resume-btn"
+                >
+                  Download Resume
+                </motion.button>
+              </StarBorder>
+              <StarBorder as="div"
+                className="custom-class"
+                color="cyan"
+                speed="5s"
               >
-                Explore my project!
-              </motion.button>
-            </StarBorder>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="cta-button resume-btn"
+                  style={{ marginLeft: '1.5rem' }}
+                >
+                  Explore my project!
+                </motion.button>
+              </StarBorder>
             </div>
           </motion.div>
         </div>

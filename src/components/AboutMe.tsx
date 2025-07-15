@@ -45,7 +45,7 @@ export default function AboutMe() {
       </div>
       <div className="about-center-content">
         <div className="about-paragraph">
-          I’m a developer skilled in multiple programming languages. I was a finalist in the Smart India Hackathon 2024 with my team Code Snipers, and I also have real-world experience — I collaborated with my team to build a static website for a client.
+        <p><span>  I’m a developer skilled in multiple programming languages. I was a finalist in the Smart India Hackathon 2024 with my team Code Snipers, and I also have real-world experience — I collaborated with my team to build a static website for a client.</span></p>
         </div>
         <div className="about-orbit">
           <OrbitingCircles iconSize={60} className="orbit-large" path={true} speed={1.5} radius={200}>

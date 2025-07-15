@@ -69,10 +69,10 @@ const AnimatedTabs: React.FC = () => {
                 transition: 'all 0.5s ease',
               }}
             >
-              {/* Purple overlay */}
+              {/* Blue overlay */}
               <div
                 style={{
-                  background: 'linear-gradient(to bottom right, #7b2cbf, #5a189a)',
+                  background: 'linear-gradient(to bottom right, #00b4d8, #0077b6)',
                   opacity: 0.9,
                   height: '100%',
                   width: '100%',
