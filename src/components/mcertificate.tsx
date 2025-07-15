@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 
 const AnimatedTabs: React.FC = () => {
   const initialTabs = [
-    { title: 'Product', value: 'product', content: 'Product Tab' },
-    { title: 'Services', value: 'services', content: 'Services Tab' },
-    { title: 'Playground', value: 'playground', content: 'Playground Tab' },
-    { title: 'Content', value: 'content', content: 'Content Tab' },
-    { title: 'Random', value: 'random', content: 'Random Tab' },
+    { title: 'SIH', value: 'sih', content: '', image: '/sih.png' },
+    { title: 'GOOGLE', value: 'google', content: '', image: '/google.png' },
   ];
 
   const [tabs, setTabs] = useState(initialTabs);
@@ -21,7 +18,7 @@ const AnimatedTabs: React.FC = () => {
   };
 
   return (
-    <div style={{ background: '#000', padding: '20px', fontFamily: 'Arial, sans-serif', minHeight: '100vh' }}>
+    <div style={{  padding: '20px', fontFamily: 'Arial, sans-serif', minHeight: '100vh' }}>
       {/* Tabs Buttons */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginBottom: '20px' }}>
         {tabs.map((tab, idx) => (
@@ -31,7 +28,7 @@ const AnimatedTabs: React.FC = () => {
             style={{
               padding: '10px 20px',
               borderRadius: '20px',
-              background: active.value === tab.value ? '#7b2cbf' : 'transparent',
+              background: active.value === tab.value ? '#00b4d8' : 'transparent',
               color: '#fff',
               border: 'none',
               cursor: 'pointer',
@@ -45,7 +42,7 @@ const AnimatedTabs: React.FC = () => {
       </div>
 
       {/* Stacked Image Cards */}
-      <div style={{ position: 'relative', height: '320px', maxWidth: '1000px', margin: '0 auto' }}>
+      <div style={{ position: 'relative', height: '480px', maxWidth: '1400px', margin: '0 auto' }}>
         {tabs.map((tab, idx) => {
           const isVisible = idx < 4;
           return (
@@ -53,12 +50,13 @@ const AnimatedTabs: React.FC = () => {
               key={tab.value}
               style={{
                 position: 'absolute',
-                top: `${idx * 30}px`,
+                top: `${idx * 40}px`,
                 left: 0,
                 right: 0,
-                height: '280px',
-                backgroundImage: `url('/your-image-path.png')`, // <-- Replace with your actual image
-                backgroundSize: 'cover',
+                height: '400px',
+                backgroundImage: `url('${tab.image}')`,
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 borderRadius: '20px',
                 boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)',
@@ -67,26 +65,16 @@ const AnimatedTabs: React.FC = () => {
                 zIndex: tabs.length - idx,
                 opacity: isVisible ? 1 : 0,
                 transition: 'all 0.5s ease',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '2.5rem',
+                fontWeight: 'bold',
+                color: '#fff',
+                textShadow: '0 2px 8px #000',
               }}
             >
-              {/* Blue overlay */}
-              <div
-                style={{
-                  background: 'linear-gradient(to bottom right, #00b4d8, #0077b6)',
-                  opacity: 0.9,
-                  height: '100%',
-                  width: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '2rem',
-                  fontWeight: 'bold',
-                  color: '#fff',
-                  borderRadius: '20px',
-                }}
-              >
-                {tab.content}
-              </div>
+              {tab.content}
             </div>
           );
         })}

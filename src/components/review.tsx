@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React from 'react';
+
 
 interface Testimonial {
   id: number;
@@ -12,69 +12,19 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Lisa Thompson",
-    designation: "VP of Technology at FutureNet",
-    quote: "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-    image: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    id: 2,
-    name: "Michael Rodriguez",
-    designation: "Lead Designer at CreativeStudio",
-    quote: "The user experience is phenomenal. It's intuitive, powerful, and has streamlined our entire design process from concept to delivery.",
-    image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    id: 3,
-    name: "Sarah Chen",
-    designation: "Product Manager at TechFlow",
-    quote: "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    id: 4,
-    name: "David Kim",
-    designation: "Founder at StartupX",
-    quote: "This solution has become indispensable to our operations. The performance improvements and feature set are simply outstanding.",
-    image: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    name: "Arbaaz Khan",
+    designation: "Founder Of Optiflow",
+    quote: "The website design for Optiflow Engineering is commendable, showcasing a clean, professional look with user-friendly navigation. Abuzaid and his team have done an excellent job with detailed product pages and a clear layout, which significantly enhances user experience by making information easily accessible. ",
+    image: "/arbaaz.jpg" // Use your local image in public folder
   }
 ];
 
 const AnimatedTestimonials: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  // Only one testimonial, so no need for index or animation state
 
-  const nextTestimonial = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
 
-  const prevTestimonial = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimating(false);
-    }, 600);
-    return () => clearTimeout(timer);
-  }, [currentIndex]);
-
-  // Auto-rotate testimonials
-  useEffect(() => {
-    const interval = setInterval(nextTestimonial, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const getImageClass = (index: number) => {
-    if (index === currentIndex) return 'active';
-    if (index === (currentIndex + 1) % testimonials.length) return 'next';
-    if (index === (currentIndex + 2) % testimonials.length) return 'next-2';
-    return 'hidden';
-  };
+  // No animation or rotation needed for a single testimonial
 
   return (
     <div className="testimonials-container">
@@ -82,7 +32,7 @@ const AnimatedTestimonials: React.FC = () => {
         .testimonials-container {
           width: 100%;
           min-height: 100vh;
-          background: #0a0a0a;
+          
           display: flex;
           align-items: center;
           justify-content: center;
@@ -306,47 +256,21 @@ const AnimatedTestimonials: React.FC = () => {
 
       <div className="testimonials-wrapper">
         <div className="image-section">
-          <div className="image-stack">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.id}
-                className={`testimonial-image ${getImageClass(index)}`}
-              >
-                <img src={testimonial.image} alt={testimonial.name} />
-              </div>
-            ))}
+        <div className="image-stack">
+          <div className="testimonial-image active">
+            <img src={testimonials[0].image} alt={testimonials[0].name} />
           </div>
+        </div>
         </div>
 
         <div className="content-section">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.id}
-              className={`testimonial-content ${index === currentIndex ? 'active' : 'hidden-content'}`}
-            >
-              <div className="author-info">
-                <h3 className="author-name">{testimonial.name}</h3>
-                <p className="author-designation">{testimonial.designation}</p>
-              </div>
-              <p className="quote">{testimonial.quote}</p>
-              <div className="navigation">
-                <button
-                  className="nav-button"
-                  onClick={prevTestimonial}
-                  disabled={isAnimating}
-                >
-                  <ChevronLeft size={24} />
-                </button>
-                <button
-                  className="nav-button"
-                  onClick={nextTestimonial}
-                  disabled={isAnimating}
-                >
-                  <ChevronRight size={24} />
-                </button>
-              </div>
+          <div className="testimonial-content active">
+            <div className="author-info">
+              <h3 className="author-name">{testimonials[0].name}</h3>
+              <p className="author-designation">{testimonials[0].designation}</p>
             </div>
-          ))}
+            <p className="quote">{testimonials[0].quote}</p>
+          </div>
         </div>
       </div>
     </div>
