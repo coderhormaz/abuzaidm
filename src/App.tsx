@@ -1,5 +1,6 @@
 import Hero from './components/Hero'
 import AboutMe from './components/AboutMe'
+import AnimatedTimeline from './components/AnimatedTimeline'
 import Footer from './components/footer';
 import SplashCursor from './components/SplashCursor/SplashCursor';
 import './App.css'
@@ -12,6 +13,7 @@ function App() {
       <SplashCursor />
       <Hero />
       <AboutMe />
+      <AnimatedTimeline />
       <div className="about-header">
         <h1>Project Showcase</h1>
       </div>
