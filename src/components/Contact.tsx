@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Contact.css';
-import { FaEnvelope, FaLinkedin, FaInstagram, FaGithub, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaInstagram, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
