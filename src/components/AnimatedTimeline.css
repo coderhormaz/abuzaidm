@@ -42,18 +42,19 @@
 }
 
 .center-line {
-  position: absolute;
-  width: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, #00ffff, #ff00ff);
-  border-radius: 10px;
-  z-index: 3; /* Increased z-index to make it more visible */
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-  height: 100%; /* Ensure full height */
-  transition: background 0.5s ease;
+position: absolute;
+width: 6px;
+left: 50%;
+transform: translateX(-50%);
+top: 0;
+bottom: 0;
+background: linear-gradient(to bottom, #00ffff, #ff00ff);
+border-radius: 10px;
+z-index: 3; /* Increased z-index to make it more visible */
+box-shadow: 0 0 25px rgba(0, 255, 255, 0.8); /* Always show strong glow */
+height: 100%; /* Always visible */
+transition: background 0.5s ease, height 1s cubic-bezier(0.23, 1, 0.32, 1);
+/* Always visible and glowing for debug */
 }
 
 .center-line-dot {
@@ -89,8 +90,8 @@
 }
 
 .timeline-item.right {
-  left: 50%;
-  padding-left: 3rem;
+left: 50%;
+padding-left: 3rem;
 }
 
 .timeline-content {
@@ -116,8 +117,9 @@
 }
 
 .timeline-item.right .timeline-year {
-  left: -2.5rem;
-  top: 1rem;
+left: -2.5rem;
+right: auto;
+top: 1rem;
 }
 
 .timeline-card {
@@ -146,11 +148,12 @@
 }
 
 .card-content h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-  position: relative;
-  display: inline-block;
+font-size: 1.8rem;
+margin-bottom: 1rem;
+color: #ffffff;
+position: relative;
+display: inline-block;
+margin-left: 2.5rem; /* Move heading to the right for right-side timeline items */
 }
 
 .card-content h3::after {
@@ -162,10 +165,12 @@
   height: 3px;
   background: linear-gradient(to right, #00ffff, transparent);
   transition: width 0.5s ease;
+  margin-left: 0;
 }
 
 .timeline-item.active .card-content h3::after {
   width: 100%;
+  margin-left: 2.5rem;
 }
 
 .card-content p {
@@ -178,11 +183,11 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  background: #0a0a0a;
+  background: #00ffff;
   border: 4px solid #00ffff;
   border-radius: 50%;
-  z-index: 3;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  z-index: 4;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
   transition: all 0.3s ease;
 }
 
@@ -210,12 +215,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
-  background-size: 15px 15px;
-  background-repeat: repeat;
-  pointer-events: none;
-  z-index: 0;
-  animation: particleAnimation 20s linear infinite;
+  /* Removed blue dot background from timeline */
+  background: none;
 }
 
 @keyframes particleAnimation {

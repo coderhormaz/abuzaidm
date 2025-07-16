@@ -7,6 +7,7 @@ import './App.css'
 import DraggableCardDemo from './components/drag';
 import AnimatedTestimonials from './components/review';
 import AnimatedTabs from './components/mcertificate';
+import Contact from './components/Contact';
 function App() {
   return (
     <>
@@ -27,6 +28,11 @@ function App() {
         <h1>Testimonials</h1>
       </div>
       <AnimatedTestimonials />
+      <div className="about-header">
+        <h2 className='headd'>“Let’s Build Something Great Together”</h2>
+        <p>Ready to transform your vision into reality? Let’s collaborate and make it happen.</p>
+      </div>
+      <Contact />
       <Footer />
     </>
   )

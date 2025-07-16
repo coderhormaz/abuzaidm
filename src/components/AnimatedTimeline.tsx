@@ -67,7 +67,15 @@ const AnimatedTimeline: React.FC = () => {
     offset: ['start end', 'end start']
   });
 
+  // Animate height from 0% to 100% as timeline scrolls into view
   const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  // Animate box-shadow (glow) from none to strong as timeline scrolls into view
+  const lineGlow = useTransform(scrollYProgress, [0, 0.2, 1], [
+    '0 0 0 rgba(0,255,255,0)',
+    '0 0 15px rgba(0,255,255,0.5)',
+    '0 0 25px rgba(0,255,255,0.8)'
+  ]);
+  // Animate color as before
   const lineColor = useTransform(
     scrollYProgress,
     [0, 0.3, 0.6, 1],
@@ -138,8 +146,9 @@ const AnimatedTimeline: React.FC = () => {
           className="center-line" 
           ref={centerLineRef}
           style={{ 
-           
-            background: lineColor 
+            background: lineColor,
+            height: lineHeight,
+            boxShadow: lineGlow
           }}
         >
           <div className="center-line-dot top"></div>
@@ -150,7 +159,9 @@ const AnimatedTimeline: React.FC = () => {
           <motion.div
             key={item.id}
             className={`timeline-item ${item.side} ${activeIndex === index ? 'active' : ''}`}
-            ref={(el) => { itemRefs.current[index] = el; }}
+            ref={(el) => {
+              itemRefs.current[index] = el;
+            }}
             data-index={index}
             initial={{ opacity: 0, x: item.side === 'left' ? -50 : 50 }}
             whileInView={{ 
