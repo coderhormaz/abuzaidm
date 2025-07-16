@@ -1,6 +1,6 @@
 .timeline-container {
   padding: 6rem 2rem;
-  background: #0a0a0a;
+  background: #0a0a0a; /* Pure black background */
   color: #ffffff;
   font-family: 'Inter', system-ui, sans-serif;
   position: relative;
@@ -50,9 +50,9 @@
   bottom: 0;
   background: linear-gradient(to bottom, #00ffff, #ff00ff);
   border-radius: 10px;
-  z-index: 1;
+  z-index: 3; /* Increased z-index to make it more visible */
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
+  height: 100%; /* Ensure full height */
   transition: background 0.5s ease;
 }
 
@@ -99,25 +99,24 @@
 
 .timeline-year {
   position: absolute;
-  background: rgba(0, 0, 0, 0.8);
-  color: #00ffff;
+  background: rgba(0, 0, 0, 0.9); /* Darker background */
+  color: #00ffff; /* Bright cyan color */
   font-size: 1.5rem;
   font-weight: 700;
   padding: 0.5rem 1.5rem;
   border-radius: 30px;
-  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(0, 255, 255, 0.3);
-  z-index: 3;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Stronger glow */
+  border: 2px solid #00ffff; /* Solid border */
+  z-index: 5; /* Higher z-index */
 }
 
 .timeline-item.left .timeline-year {
-  right: -2rem;
+  right: -2.5rem;
   top: 1rem;
 }
 
 .timeline-item.right .timeline-year {
-  left: -2rem;
+  left: -2.5rem;
   top: 1rem;
 }
 

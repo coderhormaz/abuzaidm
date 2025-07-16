@@ -138,7 +138,7 @@ const AnimatedTimeline: React.FC = () => {
           className="center-line" 
           ref={centerLineRef}
           style={{ 
-            height: lineHeight,
+           
             background: lineColor 
           }}
         >
@@ -150,7 +150,7 @@ const AnimatedTimeline: React.FC = () => {
           <motion.div
             key={item.id}
             className={`timeline-item ${item.side} ${activeIndex === index ? 'active' : ''}`}
-            ref={(el) => (itemRefs.current[index] = el)}
+            ref={(el) => { itemRefs.current[index] = el; }}
             data-index={index}
             initial={{ opacity: 0, x: item.side === 'left' ? -50 : 50 }}
             whileInView={{ 
