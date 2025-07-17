@@ -7,6 +7,7 @@ import DraggableCardDemo from './components/drag';
 import AnimatedTestimonials from './components/review';
 import AnimatedTabs from './components/mcertificate';
 import Contact from './components/Contact';
+import 'devicon/devicon.min.css';
 function App() {
   return (
     <>

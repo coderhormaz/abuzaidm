@@ -1,37 +1,50 @@
+import React from 'react';
+import './AboutMe.css';
 
-import "./AboutMe.css";
-import { useEffect, useRef } from "react";
-
-export default function AboutMe() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-    const onScroll = () => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        section.classList.add("visible");
-      } else {
-        section.classList.remove("visible");
-      }
-    };
-    window.addEventListener("scroll", onScroll);
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+const AboutMe = () => {
+  const skills = [
+    { icon: 'devicon-html5-plain colored', name: 'HTML5' },
+    { icon: 'devicon-css3-plain colored', name: 'CSS3' },
+    { icon: 'devicon-javascript-plain colored', name: 'JavaScript' },
+    { icon: 'devicon-react-original colored', name: 'React' },
+    { icon: 'devicon-nextjs-plain nextjs-icon', name: 'Next.js' },
+    { icon: 'devicon-github-original github-icon', name: 'GitHub' },
+    { icon: 'devicon-bootstrap-plain colored', name: 'Bootstrap' },
+    { icon: 'devicon-python-plain colored', name: 'Python' },
+    { icon: 'devicon-tailwindcss-plain colored', name: 'Tailwind' },
+    { icon: 'devicon-vscode-plain colored', name: 'VS Code' }
+  ];
 
   return (
-    <section className="about-section visible" ref={sectionRef}>
-      <div className="about-header">
-        <h1 id="about" >About Me</h1>
-      </div>
-      <div className="about-center-content">
-        <div className="about-paragraph">
-        <p><span>  I’m a developer skilled in multiple programming languages. I was a finalist in the Smart India Hackathon 2024 with my team Code Snipers, and I also have real-world experience — I collaborated with my team to build a static website for a client.</span></p>
+    <section id="about" className="about-section">
+      <div className="about-container">
+        <div className="about-content">
+          <h2 className="about-title">
+            <span className="title-highlight">About Me</span>
+          </h2>
+          
+          <div className="about-card">
+            <p className="about-text">
+              I'm a developer skilled in multiple programming languages. I was a finalist in the Smart India Hackathon 2024 
+              with my team Code Snipers, and I also have real-world experience — I collaborated with my team to build a 
+              static website for a client.
+            </p>
+          </div>
         </div>
-       
+        
+        <div className="skills-marquee-container">
+          <div className="skills-marquee">
+            {[...skills, ...skills].map((skill, index) => (
+              <div key={index} className="skill-item">
+                <i className={skill.icon}></i>
+                <span className="skill-name">{skill.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default AboutMe;
