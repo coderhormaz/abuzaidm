@@ -139,7 +139,7 @@ const AnimatedTimeline: React.FC = () => {
 
   return (
     <div className="timeline-container" ref={timelineRef}>
-      <h2 className="timeline-title">My Journey</h2>
+      <h2 className="timeline-title" id='experience'>My Journey</h2>
       
       <div className="timeline">
         <motion.div 

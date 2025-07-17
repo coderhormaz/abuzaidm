@@ -85,21 +85,23 @@ export default function Hero() {
             </TextAnimate>
           </motion.a>
         </div>
-        <motion.button 
+        <motion.a
           className="connect-btn"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 2.4 }}
         >
-          <TextAnimate
-            animation="fadeIn"
-            by="character"
-            delay={2.4}
-            duration={0.8}
-          >
-            LET'S CONNECT
-          </TextAnimate>
-        </motion.button>
+          <a href="#contact" className="connect-link">
+            <TextAnimate
+              animation="fadeIn"
+              by="character"
+              delay={2.4}
+              duration={0.8}
+            >
+              LET'S TALK
+            </TextAnimate>
+          </a>
+        </motion.a>
       </nav>
 
       {/* Hero Content */}
@@ -161,14 +163,15 @@ export default function Hero() {
                 color="cyan"
                 speed="5s"
               >
-                <motion.button
+                <motion.a
+                  href="#project"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="cta-button resume-btn"
                   style={{ marginLeft: '1.5rem' }}
                 >
                   Explore my project!
-                </motion.button>
+                </motion.a>
               </StarBorder>
             </div>
           </motion.div>

@@ -7,3 +7,16 @@
 .headd {
   font-size: 3rem;
 }
+h1 {
+   text-align: center;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  background: linear-gradient(to right, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  position: relative;
+  z-index: 2;
+}
